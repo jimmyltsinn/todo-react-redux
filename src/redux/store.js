@@ -1,10 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.jsx';
-
 import { createStore } from 'redux';
-import { addTodo, toggleTodo, setVisibilityFilter, VisibilityFilters } from './redux/actions';
-import todoApp from './redux/reducers';
+import { addTodo, toggleTodo, setVisibilityFilter, VisibilityFilters } from './actions.js';
+import todoApp from './reducers';
 
 let store = createStore(todoApp);
 
@@ -20,8 +16,3 @@ store.dispatch(toggleTodo(1))
 store.dispatch(setVisibilityFilter(VisibilityFilters.SHOW_COMPLETED))
 
 unsubscribe();
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);

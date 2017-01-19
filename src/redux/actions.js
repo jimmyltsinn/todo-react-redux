@@ -1,3 +1,5 @@
+let nextTodoId = 0;
+
 export const ADD_TODO = 'ADD_TODO';
 export const TOGGLE_TODO = 'TOGGLE_TODO';
 
@@ -12,6 +14,7 @@ export const VisibilityFilters = {
 export let addTodo = (text) => {
   return {
     type: ADD_TODO,
+    id: nextTodoId++,
     text
   };
 };
